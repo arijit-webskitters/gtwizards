@@ -214,71 +214,10 @@ if ($("#bg_parent").length) {
       new World();
     };
 
-    window.addEventListener("load", init);
-
-  }
-
-  const wrppr = document.querySelector(".experience-img-wrappr");
-  // wrppr.addEventListener('mousemove', function(event) { 
-  //   var cursor = document.querySelector(".custom-cursor");
-  // });
-  const interBubble = document.querySelector(".custom-cursor");
-  if (interBubble != undefined) {
-
-    gsap.set(interBubble, { xPercent: -50, yPercent: -50, top: 0, left: 0, scale: 0, transformOrigin: "50% 50%", opacity: 0 });
-    let xTo = gsap.quickTo(interBubble, "x", { duration: 0.4 }),
-      yTo = gsap.quickTo(interBubble, "y", { duration: 0.4 });
-    // scaleTo = gsap.quickTo(interBubble, "scale", {duration: 0.4}),
-    // opacityTo = gsap.quickTo(interBubble, "opacity", {duration: 0.4});
-
-
-    window.addEventListener("mousemove", e => {
-      // console.log(e.target);
-      if (e.target.classList.contains("experience-img-wrappr")) {
-        // console.log(e.target);  
-        let mouse_container = interBubble.parentElement;
-        xTo(e.pageX - mouse_container.offsetLeft);
-        yTo(e.pageY - mouse_container.offsetTop);
-        // scaleTo(1);
-        // opacityTo(1);
-        gsap.to(interBubble, { scale: 1, opacity: 1, duration: 0.4 })
-      }
-      else {
-        // scaleTo(0);
-        // opacityTo(0);
-        gsap.to(interBubble, { scale: 0, opacity: 0, duration: 0.2 })
-      }
+    window.addEventListener("load", function(){
+      setTimeout(() => {
+        init();
+      }, 2000);
     });
-  }
 
-
-
-  const wrppr2 = document.querySelector(".work-info-wrap");
-  const interBubble2 = document.querySelector(".project-cursor");
-  if (interBubble2 != undefined) {
-
-    gsap.set(interBubble2, { xPercent: -50, yPercent: -50, top: 0, left: 0, scale: 0, transformOrigin: "50% 50%", opacity: 0 });
-    let xTo = gsap.quickTo(interBubble2, "x", { duration: 0.4 }),
-      yTo = gsap.quickTo(interBubble2, "y", { duration: 0.4 });
-    // scaleTo = gsap.quickTo(interBubble2, "scale", {duration: 0.4}),
-    // opacityTo = gsap.quickTo(interBubble2, "opacity", {duration: 0.4});
-
-
-    window.addEventListener("mousemove", e => {
-      // console.log(e.target);
-      if (e.target.classList.contains("work-info-wrap")) {
-        // console.log(e.target);  
-        let mouse_container = interBubble2.parentElement;
-        xTo(e.pageX - mouse_container.offsetLeft);
-        yTo(e.pageY - mouse_container.offsetTop);
-        // scaleTo(1);
-        // opacityTo(1);
-        gsap.to(interBubble2, { scale: 1, opacity: 1, duration: 0.4 })
-      }
-      else {
-        // scaleTo(0);
-        // opacityTo(0);
-        gsap.to(interBubble2, { scale: 0, opacity: 0, duration: 0.2 })
-      }
-    });
   }
