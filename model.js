@@ -217,7 +217,7 @@ if ($("#bg_parent").length) {
     window.addEventListener("load", function(){
       setTimeout(() => {
         init();
-      }, 2000);
+      }, 5000);
     });
 
   }
